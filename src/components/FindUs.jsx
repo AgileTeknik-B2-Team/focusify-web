@@ -30,20 +30,43 @@ const FindUs = () => {
       <p className="text-base md:text-lg mb-8 max-w-xl">
         Focusify juga hadir di Play Store, download sekarang agar kamu lebih mudah untuk mengakses Focusify kapan saja dan di mana saja!
       </p>
-      <button
-        onClick={() =>
-          window.open(
-            "https://play.google.com/store/apps/details?id=com.focusify.app&hl=en-US&pli=1",
-            "_blank"
-          )
-        }
-        className="btn flex items-center gap-2"
-      >
-        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" className="sparkle">
-          <path d="M10,21.236L6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z" />
-        </svg>
-        <span className="text">Download Now!</span>
-      </button>
+<a
+  href="https://play.google.com/store/apps/details?id=com.focusify.app&hl=en-US"class="cursor-pointer group/download relative flex gap-1 px-8 py-4 bg-[#5c5fe9] text-[#f1f1f1] rounded-3xl hover:bg-opacity-70 font-semibold shadow-xl active:shadow-inner transition-all duration-300"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    height="24px"
+    width="24px"
+  >
+    <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+    <g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      id="SVGRepo_tracerCarrier"
+    ></g>
+    <g id="SVGRepo_iconCarrier">
+      <g id="Interface / Download">
+        <path
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          stroke-width="2"
+          stroke="#f1f1f1"
+          d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
+          id="Vector"
+        ></path>
+      </g>
+    </g>
+  </svg>
+  Download
+  <div
+    class="absolute text-xs uppercase scale-0 rounded-md py-2 px-2 bg-[#5c5fe9] left-2/4 mb-3 bottom-full group-hover/download:scale-100 origin-bottom transition-all duration-300 shadow-lg before:content-[''] before:absolute before:top-full before:left-2/4 before:w-3 before:h-3 before:border-solid before:bg-[#5c5fe9] before:rotate-45 before:-translate-y-2/4 before:-translate-x-2/4"
+  >
+    Go to Play Store
+  </div>
+</a>
+
     </div>
   );
 };

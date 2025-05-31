@@ -72,7 +72,7 @@ const HamburgerMenu = () => {
             {[
               { id: 'hero', label: 'Home' },
               { id: 'features', label: 'Features' },
-              { id: 'article', label: 'Article' }
+              { id: 'contact', label: 'Find Us' }
             ].map(item => (
               <li key={item.id} className="px-4 py-1">
                 <button

@@ -1,16 +1,13 @@
+// src/components/PreviewSection.jsx
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import preview1 from "../assets/FindMobile.jpg";
-import preview2 from "../assets/study3.png";
-import preview3 from "../assets/logo2.png";
-
 const previewImages = [
-  { src: preview1, alt: "Preview 1" },
-  { src: preview2, alt: "Preview 2" },
-  { src: preview3, alt: "Preview 3" },
+  { src: "/assets/preview-1.png", alt: "Preview 1" },  // perhatikan slash di depan!
+  { src: "/assets/preview-2.png", alt: "Preview 2" },
 ];
+
 
 const PreviewSection = () => {
   const settings = {
@@ -18,11 +15,11 @@ const PreviewSection = () => {
     arrows: false,
     infinite: true,
     fade: true,
-    speed: 1500,
+    speed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 6000,
     pauseOnHover: false,
     pauseOnFocus: false,
     draggable: false,
@@ -30,7 +27,7 @@ const PreviewSection = () => {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#17054e] to-[#462E96] py-6 sm:py-14 flex flex-col items-center">
+    <section className="w-full bg-white py-6 sm:py-14 flex flex-col items-center">
       <div className="w-full flex justify-center px-2 sm:px-0">
         <div
           className="

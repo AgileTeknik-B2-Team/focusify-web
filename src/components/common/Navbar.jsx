@@ -1,31 +1,89 @@
-import React from 'react'
-
-import Logo from '../../assets/logo-focusify.png'
+import React, { useState, useEffect } from "react";
+import HamburgerMenu from "../HamburgerMenu";
+import Logo from "../../assets/logo-focusify.png";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Pilih warna teks berdasarkan scrolled
+  const textColor = scrolled ? 'text-[#000000]' : 'text-white';
+
   return (
-    <nav className="sticky top-8 z-50 bg-primary-10 mx-8 mt-8 px-4 py-2 flex justify-between items-center rounded-2xl">
-      {/* Logo */}
-      <div className="space-x-2">
-        <img src={Logo} alt="Focusify Logo" className="h-20 w-20 inline-block" />
-        <span className="text-white text-lg font-semibold">Focusify</span>
+    <nav
+      className={`fixed top-0 left-1/2 -translate-x-1/2 mt-5 w-[90%] max-w-7xl z-50 px-4 md:px-10 py-4 rounded-2xl shadow-lg flex items-center transition-all duration-300
+        ${scrolled
+          ? 'bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-lg'
+          : 'bg-[#6149b1]'
+        }
+      `}
+    >
+      <div className="flex items-center space-x-2">
+        <img
+          src={Logo}
+          alt="Focusify Logo"
+          className="w-8 h-8 md:w-10 md:h-10 object-contain rounded-full"
+        />
+        <span className={`text-lg md:text-xl font-bold transition-colors duration-300 ${textColor}`}>
+          Focusify
+        </span>
       </div>
 
-      {/* Navigation Links */}
-      <div className="space-x-4">
-        <a href="/about" className="text-white hover:text-primary-20">About</a>
-        <a href="/features" className="text-white hover:text-primary-20">Features</a>
-        <a href="/contact" className="text-white hover:text-primary-20">Contact</a>
+      {/* Menu Tengah */}
+      <div className={`hidden md:flex justify-center space-x-6 mx-auto -mr-4 transition-colors duration-300 ${textColor}`}>
+        <button
+          className={`hover:text-[#462E96] transition-colors duration-200 font-semibold ${textColor}`}
+          onClick={() =>
+            document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
+          }
+        >
+          Home
+        </button>
+        <button
+          className={`hover:text-[#462E96] transition-colors duration-200 font-semibold ${textColor}`}
+          onClick={() =>
+            document.getElementById('feature')?.scrollIntoView({ behavior: 'smooth' })
+          }
+        >
+          Features
+        </button>
+        <button
+          className={`hover:text-[#462E96] transition-colors duration-200 font-semibold ${textColor}`}
+          onClick={() =>
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+          }
+        >
+          Find Us
+        </button>
       </div>
 
-      {/* Button */}
-      <div>
-        <a href="/signup" className="bg-primary-20 text-white px-4 py-2 rounded hover:bg-primary-30">
-          Sign Up
+      {/* Tombol Sebelah Kanan */}
+      <div className="hidden md:flex ml-auto">
+        <a
+          href="/nameinput"
+          className={`
+            font-semibold px-6 py-3 rounded-xl shadow-lg transition-all
+            ${scrolled
+              ? 'bg-[#6149b1] text-white'
+              : 'bg-white text-[#6149b1]'
+            }
+          `}
+        >
+          Coba Pomodoro
         </a>
       </div>
-    </nav>
-  )
-}
 
-export default Navbar
+      {/* Hamburger Mobile */}
+      <div className="md:hidden absolute right-4">
+        <HamburgerMenu />
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
