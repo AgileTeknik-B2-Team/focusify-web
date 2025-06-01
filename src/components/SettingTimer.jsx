@@ -30,7 +30,7 @@ const SettingTimer = ({ defaultTimes, onSave }) => {
 
     return (
         <div className="text-white w-full">
-            <h2 className="text-2xl font-bold mb-20">Atur Waktu</h2>
+            <h2 className="text-2xl font-bold mb-20 text-center">Atur Waktu</h2>
 
             {/* Preset Buttons */}
             <div className="flex justify-center gap-3 mb-6 ">
@@ -50,9 +50,9 @@ const SettingTimer = ({ defaultTimes, onSave }) => {
             </div>
 
             {/* Manual Input */}
-            <div className="space-y-4 text-sm">
+            <div className="space-y-4 text-sm text-center text-blue-700 ">
                 <label className="block">
-                    <span className="block mb-1 font-medium">Fokus (menit)</span>
+                    <span className="block mb-3 mt-20 font-medium md:mt-3">Fokus (menit)</span>
                     <input
                         type="number"
                         value={fokusTime}
@@ -60,11 +60,11 @@ const SettingTimer = ({ defaultTimes, onSave }) => {
                             setFokusTime(e.target.value);
                             setSelectedPreset(null);
                         }}
-                        className="w-full p-3 rounded-lg bg-white text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 rounded-lg bg-white text-center text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </label>
                 <label className="block">
-                    <span className="block mb-1 font-medium">Istirahat (menit)</span>
+                    <span className="block mb-3 mt-7 font-medium md:mt-3">Istirahat (menit)</span>
                     <input
                         type="number"
                         value={istirahatTime}
@@ -72,7 +72,7 @@ const SettingTimer = ({ defaultTimes, onSave }) => {
                             setIstirahatTime(e.target.value);
                             setSelectedPreset(null);
                         }}
-                        className="w-full p-3 rounded-lg bg-white text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 rounded-lg bg-white text-center text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </label>
             </div>
@@ -80,7 +80,7 @@ const SettingTimer = ({ defaultTimes, onSave }) => {
             {/* Save Button */}
             <button
                 onClick={handleSave}
-                className="mt-6 w-full bg-blue-700 py-3 rounded-lg text-white font-semibold hover:bg-blue-800 transition"
+                className="mt-60 md:mt-15 w-full bg-blue-700 py-3 rounded-lg text-white font-semibold hover:bg-blue-800 transition"
             >
                 Simpan
             </button>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import backgroundTimerDesktop from "../assets/backgroundTimer.jpg";
+import backgroundTimerDesktop from "../assets/Timerdesktop.png";
 import backgroundTimerMobile from "../assets/FindMobile.jpg";
+import Logo from "../assets/logo-focusify.png";
 import AnimatedContent from "../components/AnimatedContent";
 import BlurText from "../components/BlurText";
+
 
 const RealtimePage = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -61,8 +63,15 @@ const RealtimePage = () => {
             }}
         >
             {/* Logo */}
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 text-white text-2xl md:translate-x-0 md:left-6 md:text-left md:text-4xl font-mono tracking-widest">
-                FOCUSIFY
+            <div className="absolute top-6 w-full flex justify-center md:justify-start md:left-8 items-center space-x-2">
+                <img
+                    src={Logo}
+                    alt="Focusify Logo"
+                    className="w-8 h-8 md:w-10 md:h-10 object-contain rounded-full"
+                />
+                <div className="text-lg md:text-3xl font-bold transition-colors duration-300 ${textColor}">
+                    Focusify
+                </div>
             </div>
 
             {/* Quote Random */}
@@ -89,7 +98,7 @@ const RealtimePage = () => {
 
 
             {/* Navigation Icons */}
-            <div className="absolute bottom-0 left-0 w-full max-w-md mx-auto flex justify-around px-6 py-3  md:mb-0 bg-blue-800/70 text-white rounded-t-xl shadow-md md:bottom-6 md:left-1/2 md:transform md:-translate-x-1/2 md:w-auto md:gap-6 md:px-6 md:py-2 md:rounded-t-xl">
+            <div className="absolute bottom-0 left-0 w-full max-w-md mx-auto flex justify-around px-6 py-6  md:mb-0 bg-blue-800/70 text-white rounded-t-xl shadow-md md:bottom-6 md:left-1/2 md:transform md:-translate-x-1/2 md:w-auto md:gap-6 md:px-6 md:py-4 md:rounded-t-xl">
 
                 {/* Home */}
                 <button onClick={() => window.location.href = '/'} className="hover:scale-110 transition" title="Beranda">

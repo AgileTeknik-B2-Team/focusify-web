@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AnimatedContent from "../components/AnimatedContent";
-import backgroundTimerDesktop from "../assets/backgroundTimer.jpg";
+import backgroundTimerDesktop from "../assets/Timerdesktop.png";
 import backgroundTimerMobile from "../assets/FindMobile.jpg";
+import Logo from "../assets/logo-focusify.png"; 
+// <-- import logo-nya
 
 const NameInput = () => {
     const [name, setName] = useState("");
@@ -26,17 +28,22 @@ const NameInput = () => {
             className="fixed inset-0 flex items-center justify-center w-screen h-screen overflow-hidden"
             style={{
                 backgroundImage: `url(${window.innerWidth <= 768
-                    ? backgroundTimerMobile
-                    : backgroundTimerDesktop
+                        ? backgroundTimerMobile
+                        : backgroundTimerDesktop
                     })`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
         >
             {/* Logo */}
-            <div className="absolute top-6 w-full flex justify-center md:justify-start md:left-8">
-                <div className="text-white text-3xl md:text-4xl font-mono tracking-widest">
-                    FOCUSIFY
+            <div className="absolute top-6 w-full flex justify-center md:justify-start md:left-8 items-center space-x-2">
+                <img
+                    src={Logo}
+                    alt="Focusify Logo"
+                    className="w-8 h-8 md:w-10 md:h-10 object-contain rounded-full"
+                />
+                <div className="text-lg md:text-3xl font-bold transition-colors duration-300 ${textColor}">
+                    Focusify
                 </div>
             </div>
 
@@ -47,11 +54,13 @@ const NameInput = () => {
                 delay={200}
                 config={{ tension: 100, friction: 20 }}
             >
-                <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-2xl px-8 py-10 md:px-10 md:py-12 max-w-md flex flex-col items-center shadow-xl">
+                <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-2xl px-8 py-20 md:px-10 md:py-20 max-w-md flex flex-col items-center shadow-xl">
                     <h1 className="text-lg md:text-2xl font-bold text-white text-center mb-6 md:mb-10 leading-snug">
                         BERSIAPLAH UNTUK LEBIH PRODUKTIF!
                     </h1>
-                    <p className="text-white font-semibold text-2xl md:text-3xl mb-5 text-center">Ayo Kita Mulai !!</p>
+                    <p className="text-white font-semibold text-2xl md:text-3xl mb-5 text-center">
+                        Ayo Kita Mulai !!
+                    </p>
                     <input
                         type="text"
                         value={name}
@@ -67,7 +76,7 @@ const NameInput = () => {
                         Lanjut
                     </button>
 
-                    <p className="text-xs md:text-sm text-blue-900 mt-3 underline text-center">
+                    <p className="text-xs md:text-sm text-white mt-3 underline text-center">
                         Atau tekan enter
                     </p>
                 </div>

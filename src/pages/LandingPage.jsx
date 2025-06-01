@@ -11,44 +11,44 @@ import BubbleChat from '../components/BubbleChat';
 import TypewriterText from "../components/TypewriterText";
 import PreviewSection from "../components/PreviewSection";
 
-const LandingPage = () => {  
+const LandingPage = () => {
   // --- AOS setup ---
   useEffect(() => {
     AOS.init({ duration: 700, once: true, offset: 40 });
   }, []);
 
   const ReviewData = [
-  {
-    avatar: googleAnonAvatar,
-    star: 5,
-    text: "Focusify adalah aplikasi pendamping belajar yang dirancang untuk meningkatkan fokus dan produktivitas! Dengan teknik Pomodoro Timer."
-  },
-  {
-    avatar: googleAnonAvatar,
-    star: 4,
-    text: "Aplikasi ini sangat membantu saya dalam mengatur waktu belajar. Fitur statistiknya juga sangat berguna untuk melihat kemajuan saya."
-  },
-  {
-    avatar: googleAnonAvatar,
-    star: 5,
-    text: "One of the greatest app for student, help more focus on academics and keep track for your progress"
-  },
-  {
-    avatar: googleAnonAvatar,
-    star: 5,
-    text: "Focusify sangat membantu saya untuk tetap fokus saat belajar."
-  },
-  {
-    avatar: googleAnonAvatar,
-    star: 5,
-    text: "Aplikasi ini sangat membantu saya dalam mengatur waktu belajar."
-  },
-  {
-    avatar: googleAnonAvatar,
-    star: 5,
-    text: "Gacor banget aplikasinya, fitur-fiturnya lengkap dan mudah digunakan. "
-  },
-];
+    {
+      avatar: googleAnonAvatar,
+      star: 5,
+      text: "Focusify adalah aplikasi pendamping belajar yang dirancang untuk meningkatkan fokus dan produktivitas! Dengan teknik Pomodoro Timer."
+    },
+    {
+      avatar: googleAnonAvatar,
+      star: 4,
+      text: "Aplikasi ini sangat membantu saya dalam mengatur waktu belajar. Fitur statistiknya juga sangat berguna untuk melihat kemajuan saya."
+    },
+    {
+      avatar: googleAnonAvatar,
+      star: 5,
+      text: "One of the greatest app for student, help more focus on academics and keep track for your progress"
+    },
+    {
+      avatar: googleAnonAvatar,
+      star: 5,
+      text: "Focusify sangat membantu saya untuk tetap fokus saat belajar."
+    },
+    {
+      avatar: googleAnonAvatar,
+      star: 5,
+      text: "Aplikasi ini sangat membantu saya dalam mengatur waktu belajar."
+    },
+    {
+      avatar: googleAnonAvatar,
+      star: 5,
+      text: "Gacor banget aplikasinya, fitur-fiturnya lengkap dan mudah digunakan. "
+    },
+  ];
 
 
   return (
@@ -114,8 +114,8 @@ const LandingPage = () => {
           >
             <defs>
               <linearGradient id="topWave" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#6149b1" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#6149b1" stopOpacity="0.5"/>
+                <stop offset="0%" stopColor="#6149b1" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#6149b1" stopOpacity="0.5" />
               </linearGradient>
             </defs>
             <path
@@ -139,28 +139,28 @@ const LandingPage = () => {
             </div>
           </div>
           <p className="text-slate-700 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-medium" data-aos="fade-up" data-aos-delay="200">
-            Focusify adalah aplikasi pendamping belajar yang dirancang untuk meningkatkan fokus dan produktivitas. 
+            Focusify adalah aplikasi pendamping belajar yang dirancang untuk meningkatkan fokus dan produktivitas.
             Menggunakan teknik <span className="font-bold text-[#6149b1]">Pomodoro Timer</span>, Focusify membantu Anda:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mb-12">
             {[
-              { 
-                icon: "M9 12l2 2 4-4", 
+              {
+                icon: "M9 12l2 2 4-4",
                 text: "Menjaga fokus selama sesi kerja dengan timer yang dapat disesuaikan.",
                 color: "from-emerald-400 to-emerald-600"
               },
-              { 
-                icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4", 
+              {
+                icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4",
                 text: "Memberi jeda terstruktur agar otak tetap segar dan produktif.",
                 color: "from-blue-400 to-blue-600"
               },
-              { 
-                icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", 
+              {
+                icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
                 text: "Memantau progres belajar lewat statistik dan analisis mendalam.",
                 color: "from-purple-400 to-purple-600"
               },
-              { 
-                icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", 
+              {
+                icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
                 text: "Menyajikan kutipan inspiratif untuk memotivasi sepanjang hari.",
                 color: "from-pink-400 to-pink-600"
               },
@@ -203,9 +203,9 @@ const LandingPage = () => {
           >
             <defs>
               <linearGradient id="bottomWave" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#6149b1" stopOpacity="0.4"/>
-                <stop offset="50%" stopColor="#6149b1" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#6149b1" stopOpacity="0.5"/>
+                <stop offset="0%" stopColor="#6149b1" stopOpacity="0.4" />
+                <stop offset="50%" stopColor="#6149b1" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#6149b1" stopOpacity="0.5" />
               </linearGradient>
             </defs>
             <path
@@ -216,76 +216,76 @@ const LandingPage = () => {
         </div>
       </section>
       <section id="feature" data-aos="fade-up">
-        <FeatureSection/>
+        <FeatureSection />
       </section>
       <section className="relative isolate overflow-hidden bg-[#F8F8FA] py-12 md:py-20" data-aos="fade-up">
-  <div className="absolute -top-16 -left-20 size-72 bg-indigo-400/20 rounded-full blur-3xl" />
-  <div className="absolute -bottom-24 -right-16 size-80 bg-blue-400/10 rounded-full blur-3xl" />
+        <div className="absolute -top-16 -left-20 size-72 bg-indigo-400/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -right-16 size-80 bg-blue-400/10 rounded-full blur-3xl" />
 
-  <div className="mx-auto max-w-6xl px-4 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
-    <header className="text-center lg:text-left" data-aos="fade-right">
-      <h2 className="text-4xl md:text-5xl font-extrabold leading-snug">
-        Fitur yang Dirancang&nbsp;
-        <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-          Untuk&nbsp;Fokus
-        </span>
-      </h2>
-      <p className="mt-5 max-w-md mx-auto lg:mx-0 text-lg text-slate-600">
-        Kami hadir untuk membantu proses belajar kamu jadi efektif&nbsp;tanpa&nbsp;ribet.
-      </p>
-    </header>
-    <div
-  className="relative h-[28rem] overflow-hidden px-6 flex items-center"
-  data-aos="fade-left"
->
-  <Marquee
-    direction="up"
-    speed={30}
-    gradient={false}
-    pauseOnHover
-    style={{ height: "100%", width: "100%" }}
-  >
-    {[...ReviewData, ...ReviewData].map((review, i) => (
-  <div key={i} className="w-full max-w-md">
-    <BubbleChat {...review} />
-  </div>
-))}
+        <div className="mx-auto max-w-6xl px-4 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
+          <header className="text-center lg:text-left" data-aos="fade-right">
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-snug">
+              Fitur yang Dirancang&nbsp;
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Untuk&nbsp;Fokus
+              </span>
+            </h2>
+            <p className="mt-5 max-w-md mx-auto lg:mx-0 text-lg text-slate-600">
+              Kami hadir untuk membantu proses belajar kamu jadi efektif&nbsp;tanpa&nbsp;ribet.
+            </p>
+          </header>
+          <div
+            className="relative h-[28rem] overflow-hidden px-6 flex items-center"
+            data-aos="fade-left"
+          >
+            <Marquee
+              direction="up"
+              speed={30}
+              gradient={false}
+              pauseOnHover
+              style={{ height: "100%", width: "100%" }}
+            >
+              {[...ReviewData, ...ReviewData].map((review, i) => (
+                <div key={i} className="w-full max-w-md">
+                  <BubbleChat {...review} />
+                </div>
+              ))}
 
-  </Marquee>
-  <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#F8F8FA] to-transparent" />
-  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F8F8FA] to-transparent" />
-</div>
+            </Marquee>
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#F8F8FA] to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F8F8FA] to-transparent" />
+          </div>
 
 
-  </div>
-</section>
+        </div>
+      </section>
 
 
       {/* SVG wave bawah */}
-      <svg 
-        className="w-full h-20 sm:h-32 md:h-40 lg:h-48 xl:h-64" 
-        viewBox="0 0 1440 320" 
-        fill="none" 
+      <svg
+        className="w-full h-20 sm:h-32 md:h-40 lg:h-48 xl:h-64"
+        viewBox="0 0 1440 320"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
       >
         <g clipPath="url(#clip0_2387_4274)">
-          <path d="M0 224L48 208C96 192 192 160 288 149.3C384 139 480 149 576 170.7C672 192 768 224 864 224C960 224 1056 192 1152 181.3C1248 171 1344 181 1392 186.7L1440 192V320H1392C1344 320 1248 320 1152 320C1056 320 960 320 864 320C768 320 672 320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0V224Z" fill="#32375D"/>
+          <path d="M0 224L48 208C96 192 192 160 288 149.3C384 139 480 149 576 170.7C672 192 768 224 864 224C960 224 1056 192 1152 181.3C1248 171 1344 181 1392 186.7L1440 192V320H1392C1344 320 1248 320 1152 320C1056 320 960 320 864 320C768 320 672 320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0V224Z" fill="#32375D" />
         </g>
         <defs>
           <clipPath id="clip0_2387_4274">
-            <rect width="1440" height="320" fill="white"/>
+            <rect width="1440" height="320" fill="white" />
           </clipPath>
         </defs>
       </svg>
 
       {/* Contact/FindUs */}
       <section id="contact">
-        <FindUs/>
+        <FindUs />
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </>
   )
 }
