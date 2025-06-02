@@ -80,7 +80,7 @@ const SettingTimer = ({ defaultTimes, onSave }) => {
             {/* Save Button */}
             <button
                 onClick={handleSave}
-                className="mt-30 md:mt-15 w-full  bg-blue-700 py-3 rounded-lg text-white font-semibold hover:bg-blue-800 transition"
+                className="mt-15 md:mt-15 w-full  bg-blue-700 py-3 rounded-lg text-white font-semibold hover:bg-blue-800 transition"
             >
                 Simpan
             </button>
