@@ -68,7 +68,7 @@ const LandingPage = () => {
           <TypewriterText />
         </h1>
         <p className="mt-6 text-lg text-gray-600">
-          Blokir notifikasi mengganggu saat aktivitas dan atur timer sesuai keinginanmu
+          Blokir notifikasi mengganggu saat aktivitas dan atur timer sesuai dengan keinginanmu
         </p>
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <a className="playstore-button" href="https://play.google.com/store/search?q=FOCUSIFY&c=apps">
