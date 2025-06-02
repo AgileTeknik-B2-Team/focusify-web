@@ -139,7 +139,7 @@ const TimerPage = () => {
                 </div>
 
                 {/* Settings icon */}
-                <div className="absolute top-6 right-6 md:right-10 bg-blue-800/70 p-3 md:p-4 rounded-xl shadow-md text-white z-30">
+                <div className="absolute top-6 right-6 md:right-10 bg-blue-800/70 p-5 md:p-4 rounded-xl shadow-md text-white z-30">
                     <button onClick={() => setShowSettings(true)} aria-label="Pengaturan Timer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.397-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.142-.854-.108-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894zM15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -220,7 +220,7 @@ const TimerPage = () => {
 
 
                 {/* Navigation Icons - Fixed at the bottom */}
-                <div className="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto flex justify-around px-4 py-3 bg-blue-700/80 backdrop-blur-sm text-white rounded-t-xl shadow-lg md:bottom-5 md:left-1/2 md:transform md:-translate-x-1/2 md:w-auto md:gap-5 md:px-5 md:rounded-lg z-50">
+                <div className="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto flex justify-around px-4 py-3 bg-blue-700/80 backdrop-blur-sm text-white rounded-t-xl shadow-lg md:bottom-5 md:left-1/2 md:mx-0 md:transform md:-translate-x-1/2 md:w-auto md:gap-5 md:px-5 md:rounded-lg z-50">
                     <button onClick={() => window.location.href = '/'} className="hover:scale-110 transition p-2" title="Beranda" aria-label="Beranda">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-7 md:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9.75L12 3l9 6.75V20a1.25 1.25 0 01-1.25 1.25H4.25A1.25 1.25 0 013 20V9.75z" />
@@ -254,7 +254,7 @@ const TimerPage = () => {
                         />
                         <button
                             onClick={() => setShowSettings(false)}
-                            className="text-sm text-black hover:text-slate-900 underline mt-8 mx-auto block"
+                            className="text-sm text-black hover:text-slate-900 underline mt-3 mx-auto block"
                         >
                             Tutup
                         </button>

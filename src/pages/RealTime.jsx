@@ -119,8 +119,7 @@ const RealtimePage = () => {
                 </div>
 
                 {/* Navigation Icons - Fixed at the bottom */}
-                {/* Strukturnya sama dengan di TimerPage, pastikan styling konsisten */}
-                <div className="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto flex justify-around px-4 py-3 bg-blue-700/80 backdrop-blur-sm text-white rounded-t-xl shadow-lg md:bottom-5 md:left-1/2 md:transform md:-translate-x-1/2 md:w-auto md:gap-5 md:px-5 md:rounded-lg z-50">
+                <div className="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto flex justify-around px-4 py-3 bg-blue-700/80 backdrop-blur-sm text-white rounded-t-xl md:justifshadow-lg md:bottom-5 md:mx-0 md:left-1/2 md:transform md:-translate-x-1/2 md:w-auto md:gap-5 md:px-5 md:rounded-lg z-50">
                     <button onClick={() => window.location.href = '/'} className="hover:scale-110 transition p-2" title="Beranda" aria-label="Beranda">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-7 md:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9.75L12 3l9 6.75V20a1.25 1.25 0 01-1.25 1.25H4.25A1.25 1.25 0 013 20V9.75z" />
