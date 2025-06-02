@@ -11,9 +11,7 @@ const BubbleChat = ({ avatar, star = 5, text }) => {
   const stars = Array.from({ length: star });
   return (
     <div
-      className="relative flex items-start gap-3 w-full px-8 lg:px-2"
-      data-aos="fade-up"
-      data-aos-duration="600"
+      className="relative flex items-start gap-3 w-full px-24 sm:px-0"
     >
       {/* Avatar */}
       <img
@@ -26,10 +24,10 @@ const BubbleChat = ({ avatar, star = 5, text }) => {
         {/* Bintang */}
         <div className="mb-2 flex items-center gap-1">
           {stars.map((_, i) => (
-            <HiStar key={i} className="h-4 w-4 text-yellow-400 shrink-0" />
+            <HiStar key={i} className="h-4 w-4 text-amber-400 shrink-0" />
           ))}
         </div>
-        <p className="text-sm leading-normal text-slate-800">{text}</p>
+        <p className="leading-normal text-body">{text}</p>
       </div>
     </div>
   );

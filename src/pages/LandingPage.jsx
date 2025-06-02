@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import Marquee from "react-fast-marquee";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, FreeMode } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const googleAnonAvatar = "https://ssl.gstatic.com/accounts/ui/avatar_2x.png";
@@ -8,6 +9,7 @@ import Footer from '../components/common/Footer'
 import FindUs from '../components/FindUs';
 import FeatureSection from "../components/FeatureSection";
 import BubbleChat from '../components/BubbleChat';
+import TestimonialCard from '../components/TestimonialCard';
 import TypewriterText from "../components/TypewriterText";
 import PreviewSection from "../components/PreviewSection";
 
@@ -54,8 +56,7 @@ const LandingPage = () => {
   return (
     <>
       {/* Navbar */}
-      {/* <div className="absolute -top-16 size-72 bg-primary-10 rounded-full blur-3xl" /> */}
-      <div className="absolute -top-16 size-72 bg-gradient-radial from-[#4C8AFD] via-[#93A4F9] to-[#FF65A2] rounded-full blur-3xl" />
+      <div className="absolute -top-80 right-180 w-120 h-120 bg-gradient-to-br from-primary-10 via-[#7209b7] to-[#f72585] rounded-full opacity-35 blur-3xl z-0" />
       <Navbar />
 
       {/* Header */}
@@ -64,12 +65,12 @@ const LandingPage = () => {
         className="text-center max-w-2xl mx-auto my-16 px-4 pt-28"
         data-aos="fade-down"
       >
-        <h1 className="text-4xl font-bold text-gray-800 sm:text-5xl leading-tight">
+        <h1 className="text-4xl font-bold text-heading sm:text-5xl leading-tight">
           <span className="text-primary-10">Focusify</span>
           {" Bantu mencapai targetmu dengan mudah dan tanpa "}
           <TypewriterText />
         </h1>
-        <p className="mt-6 text-lg text-gray-600">
+        <p className="mt-6 text-base sm:text-lg md:text-xl text-body">
           Blokir notifikasi mengganggu saat aktivitas dan atur timer sesuai dengan keinginanmu
         </p>
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -100,17 +101,8 @@ const LandingPage = () => {
       </section>
 
       {/* Introduction */}
-      <section
-        className="relative bg-gradient-to-br from-[#F8F8FA] via-[#F0F0F5] to-[#E8E8F0] text-center py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        data-aos="fade-up"
-      >
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-primary-10/20 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-[#8B7EC8]/20 rounded-full blur-lg animate-pulse delay-1000"></div>
-          <div className="absolute bottom-32 left-1/4 w-12 h-12 bg-primary-10/15 rounded-full blur-md animate-pulse delay-500"></div>
-          <div className="absolute bottom-20 right-1/3 w-24 h-24 bg-[#9A8FD3]/20 rounded-full blur-xl animate-pulse delay-1500"></div>
-        </div>
-        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
+      <section className="relative text-center py-20 md:py-32 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
           <svg
             className="relative block w-full h-28 md:h-32"
             xmlns="http://www.w3.org/2000/svg"
@@ -119,8 +111,7 @@ const LandingPage = () => {
           >
             <defs>
               <linearGradient id="topWave" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#4361EE" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#4361EE" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#4361EE" stopOpacity="1" />
               </linearGradient>
             </defs>
             <path
@@ -129,77 +120,86 @@ const LandingPage = () => {
             ></path>
           </svg>
         </div>
-        <div className="relative max-w-5xl mx-auto z-10">
-          <div className="mb-8">
-            <h1 className="text-lg md:text-4xl font-black text-slate-800 drop-shadow-lg mb-4 leading-tight" data-aos="zoom-in">
-              Ayo Kenalan Sama{' '}
-              <span className="bg-gradient-to-r from-primary-10 via-[#8B7EC8] to-[#9A8FD3] bg-clip-text text-transparent animate-pulse">
-                Focusify
-              </span>
-              !
-            </h1>
-            <div className="relative mx-auto w-24 h-2 mb-2">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-10 to-[#8B7EC8] rounded-full"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#8B7EC8] to-[#9A8FD3] rounded-full animate-pulse"></div>
+
+        <div className="relative bg-primary-10 text-center py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-20 left-10 w-20 h-20 bg-primary-10/20 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-16 h-16 bg-[#8B7EC8]/20 rounded-full blur-lg animate-pulse delay-1000"></div>
+            <div className="absolute bottom-32 left-1/4 w-12 h-12 bg-primary-10/15 rounded-full blur-md animate-pulse delay-500"></div>
+            <div className="absolute bottom-20 right-1/3 w-24 h-24 bg-[#9A8FD3]/20 rounded-full blur-xl animate-pulse delay-1500"></div>
+          </div>
+          
+          <div className="relative max-w-5xl mx-auto z-10">
+            <div className="mb-8">
+              <h1 className="text-lg md:text-4xl font-bold text-white drop-shadow-lg mb-4 leading-tight" data-aos="zoom-in">
+                Ayo Kenalan Sama{' '}
+                <span className="bg-gradient-to-r from-white via-[#a497dd] to-[#ada0ee] bg-clip-text text-transparent animate-pulse">
+                  Focusify!
+                </span>
+              </h1>
+              <div className="relative mx-auto w-24 h-2 mb-2">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-10 to-[#8B7EC8] rounded-full"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#8B7EC8] to-[#9A8FD3] rounded-full animate-pulse"></div>
+              </div>
+            </div>
+            <p className="text-white text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12" data-aos="fade-up" data-aos-delay="200">
+              Focusify adalah aplikasi pendamping belajar yang dirancang untuk meningkatkan fokus dan produktivitas.
+              Menggunakan teknik <span className="font-bold text-[#c8bff0]">Pomodoro Timer</span>, Focusify membantu Anda:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mb-12">
+              {[
+                {
+                  icon: "M9 12l2 2 4-4",
+                  text: "Menjaga fokus selama sesi kerja dengan timer yang dapat disesuaikan.",
+                  color: "from-emerald-400 to-emerald-600"
+                },
+                {
+                  icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4",
+                  text: "Memberi jeda terstruktur agar otak tetap segar dan produktif.",
+                  color: "from-blue-400 to-blue-600"
+                },
+                {
+                  icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+                  text: "Memantau progres belajar lewat statistik dan analisis mendalam.",
+                  color: "from-purple-400 to-purple-600"
+                },
+                {
+                  icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+                  text: "Menyajikan kutipan inspiratif untuk memotivasi sepanjang hari.",
+                  color: "from-pink-400 to-pink-600"
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="group flex items-start space-x-4 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl hover:scale-105 transition-all hover:bg-white/80"
+                  data-aos="fade-up"
+                  data-aos-delay={150 * (i + 1)}
+                >
+                  <div className={`p-3 rounded-xl bg-gradient-to-br ${item.color} shadow-lg group-hover:scale-110 transition-all duration-300`}>
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d={item.icon} />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <span className="text-body text-sm sm:text-base leading-relaxed group-hover:text-heading transition-all duration-200">
+                      {item.text}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          <p className="text-slate-700 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-medium" data-aos="fade-up" data-aos-delay="200">
-            Focusify adalah aplikasi pendamping belajar yang dirancang untuk meningkatkan fokus dan produktivitas.
-            Menggunakan teknik <span className="font-bold text-primary-10">Pomodoro Timer</span>, Focusify membantu Anda:
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mb-12">
-            {[
-              {
-                icon: "M9 12l2 2 4-4",
-                text: "Menjaga fokus selama sesi kerja dengan timer yang dapat disesuaikan.",
-                color: "from-emerald-400 to-emerald-600"
-              },
-              {
-                icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4",
-                text: "Memberi jeda terstruktur agar otak tetap segar dan produktif.",
-                color: "from-blue-400 to-blue-600"
-              },
-              {
-                icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-                text: "Memantau progres belajar lewat statistik dan analisis mendalam.",
-                color: "from-purple-400 to-purple-600"
-              },
-              {
-                icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-                text: "Menyajikan kutipan inspiratif untuk memotivasi sepanjang hari.",
-                color: "from-pink-400 to-pink-600"
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="group flex items-start space-x-4 bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white/80 border border-white/50"
-                data-aos="fade-up"
-                data-aos-delay={150 * (i + 1)}
-              >
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${item.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d={item.icon} />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <span className="text-slate-800 font-medium text-base leading-relaxed group-hover:text-slate-900 transition-colors duration-200">
-                    {item.text}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
-
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+        
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
           <svg
             className="relative block w-full h-28 md:h-32"
             xmlns="http://www.w3.org/2000/svg"
@@ -208,9 +208,7 @@ const LandingPage = () => {
           >
             <defs>
               <linearGradient id="bottomWave" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#4361EE" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#4361EE" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#4361EE" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#4361EE" stopOpacity="1" />
               </linearGradient>
             </defs>
             <path
@@ -220,44 +218,61 @@ const LandingPage = () => {
           </svg>
         </div>
       </section>
+      
       <section id="feature" data-aos="fade-up">
+        <div className="absolute -top-20 right-320 w-120 h-120 bg-gradient-to-br from-primary-10 via-[#4895ef] to-[#f72585] rounded-full opacity-35 blur-3xl z-0" />
         <FeatureSection />
       </section>
+      
       <section className="relative isolate overflow-hidden bg-[#F8F8FA] py-12 md:py-20" data-aos="fade-up">
-        <div className="absolute -top-16 -left-20 size-72 bg-indigo-400/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -right-16 size-48 bg-blue-400/10 rounded-full blur-3xl" />
+        <div className="absolute -top-16 -left-20 size-72 bg-primary-10/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -right-16 size-64 bg-[#7209b7]/20 rounded-full blur-3xl" />
 
         <div className="mx-auto max-w-6xl px-4 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
           <header className="text-center lg:text-left" data-aos="fade-right">
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-snug">
+            <h2 className="text-heading text-4xl md:text-5xl font-bold leading-snug">
               <span className="bg-gradient-to-r from-primary-10 to-primary-20 bg-clip-text text-transparent">
                 Special Thanks&nbsp;  
               </span>
               Buat Kalian!
             </h2>
-            <p className="mt-5 max-w-md mx-auto lg:mx-0 text-lg text-slate-600">
+            <p className="mt-5 max-w-md mx-auto lg:mx-0 text-base sm:text-lg md:text-xl text-body">
               Maupun kalian seorang profesional, pelajar, ataupun lainnya. Kami akan hadir untuk menemani kalian.
             </p>
           </header>
-          <div
-            className="relative h-[28rem] overflow-hidden px-6 flex items-center"
-            data-aos="fade-left"
-          >
-            <Marquee
-              direction="up"
-              speed={30}
-              gradient={false}
-              style={{ height: "100%", width: "100%" }}
+          
+          <div className="relative h-[32rem] overflow-hidden" data-aos="fade-left">
+            <Swiper
+              direction="vertical"
+              slidesPerView="auto"
+              spaceBetween={20}
+              speed={2000}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+                reverseDirection: false,
+              }}
+              loop={true}
+              freeMode={{
+                enabled: true,
+                momentum: false,
+              }}
+              modules={[Autoplay, FreeMode]}
+              className="h-full testimonial-swiper"
             >
-              {[...ReviewData, ...ReviewData].map((review, i) => (
-                <div key={i} className="w-full max-w-md">
-                  <BubbleChat {...review} />
-                </div>
+              {/* Duplicate data for infinite loop */}
+              {[...ReviewData, ...ReviewData, ...ReviewData].map((review, i) => (
+                <SwiperSlide key={`review-${i}`} className="!h-auto">
+                  <div className="mb-4">
+                    <TestimonialCard {...review} />
+                  </div>
+                </SwiperSlide>
               ))}
+            </Swiper>
 
-            </Marquee>
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#F8F8FA] to-transparent" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F8F8FA] to-transparent" />
+            {/* Gradient overlays */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#F8F8FA] to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F8F8FA] to-transparent z-10" />
           </div>
         </div>
       </section>
@@ -265,7 +280,7 @@ const LandingPage = () => {
 
       {/* SVG wave bawah */}
       <svg
-        className="w-full h-20 sm:h-32 md:h-40 lg:h-48 xl:h-64"
+        className="w-full h-20 mt-16 sm:h-32 md:h-40 lg:h-48 xl:h-64"
         viewBox="0 0 1440 320"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const previewImages = [
   { src: "/assets/preview-1.png", alt: "Preview 1" },  // perhatikan slash di depan!
-  { src: "/assets/preview-2.png", alt: "Preview 2" },
-  { src: "/assets/preview-3.png", alt: "Preview 3" },
+  { src: "/assets/preview-2.jpeg", alt: "Preview 2" },
+  { src: "/assets/preview-3.jpeg", alt: "Preview 3" },
+  { src: "/assets/preview-4.jpeg", alt: "Preview 4" },
 ];
 
 
@@ -35,12 +36,11 @@ const PreviewSection = () => {
             w-full
             max-w-[900px]
             aspect-[16/9]
-            rounded-xl sm:rounded-3xl
+            rounded-3xl
             overflow-hidden
             shadow-2xl
-            bg-white/10
+            shadow-primary-20/45
             backdrop-blur-xl
-            border border-white/20
             flex items-center justify-center
             transition-all
           "
