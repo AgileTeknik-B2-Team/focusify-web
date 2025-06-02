@@ -35,12 +35,11 @@ const PreviewSection = () => {
             w-full
             max-w-[900px]
             aspect-[16/9]
-            rounded-xl sm:rounded-3xl
+            rounded-3xl
             overflow-hidden
             shadow-2xl
-            bg-white/10
+            shadow-primary-20/45
             backdrop-blur-xl
-            border border-white/20
             flex items-center justify-center
             transition-all
           "
