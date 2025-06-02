@@ -19,6 +19,44 @@
   --color-accent: #505050;
 }
 
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-radial-at-t {
+    background-image: radial-gradient(circle at top, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-radial-at-b {
+    background-image: radial-gradient(circle at bottom, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-radial-at-l {
+    background-image: radial-gradient(circle at left, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-radial-at-r {
+    background-image: radial-gradient(circle at right, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-radial-at-tl {
+    background-image: radial-gradient(circle at top left, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-radial-at-tr {
+    background-image: radial-gradient(circle at top right, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-radial-at-bl {
+    background-image: radial-gradient(circle at bottom left, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-radial-at-br {
+    background-image: radial-gradient(circle at bottom right, var(--tw-gradient-stops));
+  }
+}
+
 @layer base {
   html {
     font-family: theme(--font-family);

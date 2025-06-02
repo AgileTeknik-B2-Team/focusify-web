@@ -35,7 +35,7 @@ const TypewriterText = () => {
   }, [display, typing, index]);
 
   return (
-    <span className="text-[#6149b1] font-bold border-r-2 border-[#6149b1]">
+    <span className="text-primary-10 font-bold border-r-2 border-primary-10">
       {display}
     </span>
   );
