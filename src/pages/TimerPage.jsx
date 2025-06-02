@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import backgroundTimerDesktop from "../assets/backgroundTimer.jpg";
+import backgroundTimerDesktop from "../assets/Timerdesktop.png";
 import backgroundTimerMobile from "../assets/FindMobile.jpg";
+import Logo from "../assets/logo-focusify.png";
 import AnimatedContent from "../components/AnimatedContent";
 import { Toaster, toast } from 'react-hot-toast';
 import SettingTimer from "../components/SettingTimer"; // pastikan path-nya benar
@@ -44,7 +45,7 @@ const TimerPage = () => {
 
     const handleAutoSwitch = () => {
         // buat objek audio
-        const notifSound = new Audio('/sounds/notif.mp3'); 
+        const notifSound = new Audio('/sounds/notif.mp3');
         notifSound.play(); // mainkan suara
         if (mode === 'fokus') {
             toast.success('🎯 Waktu Fokus selesai! Saatnya istirahat.', {
@@ -129,8 +130,15 @@ const TimerPage = () => {
             </div>
 
             {/* Logo */}
-            <div className="absolute top-6 left-6 text-white text-2xl md:text-4xl font-mono tracking-widest">
-                FOCUSIFY
+            <div className="absolute top-6 w-full flex justify-center md:justify-start md:left-8 items-center space-x-2">
+                <img
+                    src={Logo}
+                    alt="Focusify Logo"
+                    className="w-8 h-8 md:w-10 md:h-10 object-contain rounded-full"
+                />
+                <div className="text-lg md:text-3xl font-bold transition-colors duration-300 ${textColor}">
+                    Focusify
+                </div>
             </div>
 
             {/* Main vertical container */}
@@ -164,13 +172,13 @@ const TimerPage = () => {
                     {/* Mode buttons */}
                     <div className="flex space-x-2">
                         <button
-                            className={`px-5 py-3 rounded-full border text-sm md:text-base ${mode === 'fokus' ? 'bg-blue-700 text-black' : 'border-white text-white'}`}
+                            className={`px-5 py-3 rounded-2xl border text-sm md:text-base ${mode === 'fokus' ? 'bg-blue-700 text-black' : 'border-white text-white'}`}
                             onClick={() => switchMode('fokus')}
                         >
                             Fokus
                         </button>
                         <button
-                            className={`px-5 py-3 rounded-full border text-sm md:text-base ${mode === 'istirahat' ? 'bg-blue-700 text-black' : 'border-white text-white'}`}
+                            className={`px-5 py-3 rounded-2xl border text-sm md:text-base ${mode === 'istirahat' ? 'bg-blue-700 text-black' : 'border-white text-white'}`}
                             onClick={() => switchMode('istirahat')}
                         >
                             Istirahat
@@ -183,7 +191,7 @@ const TimerPage = () => {
                     {/* Control buttons */}
                     <div className="flex space-x-4 items-center">
                         <button
-                            className="bg-white/20 backdrop-blur px-6 py-2 rounded-lg font-medium hover:opacity-90"
+                            className="bg-white/40 backdrop-blur px-6 py-2 rounded-lg font-medium hover:opacity-90"
                             onClick={toggleTimer}
                         >
                             {isRunning ? 'Hentikan' : 'Mulai'}
@@ -199,7 +207,7 @@ const TimerPage = () => {
             </AnimatedContent>
 
             {/* Navigation Icons */}
-            <div className="absolute bottom-0 left-0 w-full max-w-md mx-auto flex justify-around px-6 py-3  md:mb-0 bg-blue-800/70 text-white rounded-t-xl shadow-md md:bottom-6 md:left-1/2 md:transform md:-translate-x-1/2 md:w-auto md:gap-6 md:px-6 md:py-2 md:rounded-t-xl">
+            <div className="absolute bottom-0 left-0 w-full max-w-md mx-auto flex justify-around px-6 py-6  md:mb-0 bg-blue-800/70 text-white rounded-t-xl shadow-md md:bottom-6 md:left-1/2 md:transform md:-translate-x-1/2 md:w-auto md:gap-6 md:px-6 md:py-4 md:rounded-t-xl">
 
                 {/* Home */}
                 <button onClick={() => window.location.href = '/'} className="hover:scale-110 transition" title="Beranda">
@@ -222,7 +230,7 @@ const TimerPage = () => {
             </div>
 
             {/* Settings icon */}
-            <div className="absolute top-6 right-10 bg-blue-800/70 p-1 rounded-xl shadow-md text-white z-30">
+            <div className="absolute top-6 right-10 bg-blue-800/70 p-4 rounded-xl shadow-md text-white z-30">
                 <button onClick={() => setShowSettings(true)}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -257,10 +265,11 @@ const TimerPage = () => {
                     />
                     <button
                         onClick={() => setShowSettings(false)}
-                        className="text-sm text-blue-700 underline mb-4 mt-3 "
+                        className="text-sm text-white underline mb-4 mt-3 mx-auto block"
                     >
                         Tutup
                     </button>
+
 
                 </div>
             </div>

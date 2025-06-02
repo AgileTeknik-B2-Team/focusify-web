@@ -21,8 +21,8 @@ const FeatureCard = ({ emoji, title, description, isSelected, onClick }) => {
       className={`cursor-pointer rounded-2xl p-6 shadow-lg transition-all duration-300 flex flex-col gap-2
         ${
           isSelected
-            ? "bg-gradient-to-r from-blue-600 to-indigo-600 scale-105 ring-2 ring-indigo-400/70 text-white"
-            : "bg-gradient-to-r from-blue-600 to-indigo-600 hover:scale-105 hover:ring-2 hover:ring-indigo-300/60 text-white"
+            ? "bg-gradient-to-r from-primary-10 to-primary-20 scale-105 ring-2 text-white"
+            : "bg-gradient-to-r from-primary-10 to-primary-20 hover:scale-105 text-white"
         }
       `}
     >
@@ -117,6 +117,8 @@ export default function FeatureSection() {
         src={features[selected].image}
         alt={features[selected].title}
         className="block w-full h-auto max-w-[260px] bg-transparent object-contain"
+        loading="lazy"
+        decoding="async"
       />
     </motion.div>
   </AnimatePresence>
