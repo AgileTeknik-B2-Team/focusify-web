@@ -14,8 +14,8 @@
   --color-secondary-10: #3A5A40;
   --color-secondary-20: #588157;
   --color-grey: #F8F9FA;
-  --color-heading: #1D1D1D;
-  --color-body: #2E2E2E;
+  --color-heading: #2b355c;
+  --color-body: #465281;
   --color-accent: #505050;
 }
 
@@ -63,6 +63,28 @@
   }
 }
 
+.gradient-text {
+  background: linear-gradient(
+    45deg,
+    #3BCCFF 0%,     /* Picton Blue */
+    #FF3333 25%,    /* Deep Carmine Pink */
+    #FFD400 50%,    /* Cyber Yellow */
+    #48FF48 75%,    /* Screamin' Green */
+    #3BCCFF 100%    /* Back to Picton Blue */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* From Uiverse.io by Yaya12085 */ 
 .playstore-button {
   display: inline-flex;
@@ -106,6 +128,7 @@
 .text-2 {
   font-weight: 600;
 }
+
 html {
   scroll-behavior: smooth;
 }
